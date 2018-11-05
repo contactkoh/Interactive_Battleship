@@ -52,7 +52,8 @@ void setup() {
   //Button Activated
   pinMode(Led_Button, OUTPUT);
   pinMode(Button, INPUT);
-  
+  state1Setup();
+  state0Setup();
 
   Serial.println("VCNL4010 test");
   if (! vcnl.begin()){

@@ -33,6 +33,7 @@ void state1Loop() {
 }
 
 void doState1() {
-  if (lastState != 1) { state1Setup(); }
+  if (lastState != 1) {// state1Setup();
+    }
   state1Loop();
 }

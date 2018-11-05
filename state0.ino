@@ -27,6 +27,7 @@ void state0Loop() {
 }
 
 void doState0() {
-  if (lastState != 0) { state0Setup(); }
+  if (lastState != 0) { //state0Setup();
+    }
   state0Loop();
 }

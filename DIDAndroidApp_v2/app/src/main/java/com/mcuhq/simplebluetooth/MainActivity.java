@@ -1,5 +1,6 @@
 package com.mcuhq.simplebluetooth;
 
+import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -45,11 +46,55 @@ public class MainActivity extends AppCompatActivity {
     private Set<BluetoothDevice> mPairedDevices;
     private ArrayAdapter<String> mBTArrayAdapter;
     private ListView mDevicesListView;
-    private CheckBox mA1;
-    private CheckBox mA10;
-    private CheckBox mJ1;
-    private CheckBox mJ10;
-    private CheckBox mA5;
+
+    private Button mA1;
+    private Button mA2;
+    private Button mA3;
+    private Button mA4;
+    private Button mA5;
+    private Button mA6;
+    private Button mA7;
+    private Button mA8;
+    private Button mA9;
+    private Button mA10;
+
+    private Button mB1;
+    private Button mB2;
+    private Button mB3;
+    private Button mB4;
+    private Button mB5;
+    private Button mB6;
+    private Button mB7;
+    private Button mB8;
+    private Button mB9;
+    private Button mB10;
+
+    private Button mC1;
+    private Button mC2;
+    private Button mC3;
+    private Button mC4;
+    private Button mC5;
+    private Button mC6;
+    private Button mC7;
+    private Button mC8;
+    private Button mC9;
+    private Button mC10;
+
+    private Button mJ1;
+    private Button mJ2;
+    private Button mJ3;
+    private Button mJ4;
+    private Button mJ5;
+    private Button mJ6;
+    private Button mJ7;
+    private Button mJ8;
+    private Button mJ9;
+    private Button mJ10;
+
+
+
+    //private CheckBox mJ10;
+    //private CheckBox mA5;
 
 
     private final String TAG = MainActivity.class.getSimpleName();
@@ -77,12 +122,55 @@ public class MainActivity extends AppCompatActivity {
         mOffBtn = (Button)findViewById(R.id.off);
         mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.PairedBtn);
-        mA1 = (CheckBox)findViewById(R.id.checkboxA1);
-        mA10 = (CheckBox)findViewById(R.id.checkboxA10);
-        mJ1 = (CheckBox)findViewById(R.id.checkboxJ1);
-        mJ10 = (CheckBox)findViewById(R.id.checkboxJ10);
-        mA5 = (CheckBox)findViewById(R.id.checkboxA5);
 
+        //populate inputs
+        mA1 = (Button)findViewById(R.id.buttonA1);
+        mA2 = (Button)findViewById(R.id.buttonA2);
+        mA3 = (Button)findViewById(R.id.buttonA3);
+        mA4 = (Button)findViewById(R.id.buttonA4);
+        mA5 = (Button)findViewById(R.id.buttonA5);
+        mA6 = (Button)findViewById(R.id.buttonA6);
+        mA7 = (Button)findViewById(R.id.buttonA7);
+        mA8 = (Button)findViewById(R.id.buttonA8);
+        mA9 = (Button)findViewById(R.id.buttonA9);
+        mA10 = (Button)findViewById(R.id.buttonA10);
+
+        mB1 = (Button)findViewById(R.id.buttonB1);
+        mB2 = (Button)findViewById(R.id.buttonB2);
+        mB3 = (Button)findViewById(R.id.buttonB3);
+        mB4 = (Button)findViewById(R.id.buttonB4);
+        mB5 = (Button)findViewById(R.id.buttonB5);
+        mB6 = (Button)findViewById(R.id.buttonB6);
+        mB7 = (Button)findViewById(R.id.buttonB7);
+        mB8 = (Button)findViewById(R.id.buttonB8);
+        mB9 = (Button)findViewById(R.id.buttonB9);
+        mB10 = (Button)findViewById(R.id.buttonB10);
+
+        mC1 = (Button)findViewById(R.id.buttonC1);
+        mC2 = (Button)findViewById(R.id.buttonC2);
+        mC3 = (Button)findViewById(R.id.buttonC3);
+        mC4 = (Button)findViewById(R.id.buttonC4);
+        mC5 = (Button)findViewById(R.id.buttonC5);
+        mC6 = (Button)findViewById(R.id.buttonC6);
+        mC7 = (Button)findViewById(R.id.buttonC7);
+        mC8 = (Button)findViewById(R.id.buttonC8);
+        mC9 = (Button)findViewById(R.id.buttonC9);
+        mC10 = (Button)findViewById(R.id.buttonC10);
+
+        mJ1 = (Button)findViewById(R.id.buttonJ1);
+        mJ2 = (Button)findViewById(R.id.buttonJ2);
+        mJ3 = (Button)findViewById(R.id.buttonJ3);
+        mJ4 = (Button)findViewById(R.id.buttonJ4);
+        mJ5 = (Button)findViewById(R.id.buttonJ5);
+        mJ6 = (Button)findViewById(R.id.buttonJ6);
+        mJ7 = (Button)findViewById(R.id.buttonJ7);
+        mJ8 = (Button)findViewById(R.id.buttonJ8);
+        mJ9 = (Button)findViewById(R.id.buttonJ9);
+        mJ10 = (Button)findViewById(R.id.buttonJ10);
+
+
+        //mJ10 = (CheckBox)findViewById(R.id.checkboxJ10);
+        //mA5 = (CheckBox)findViewById(R.id.checkboxA5);
 
 
         mBTArrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1);

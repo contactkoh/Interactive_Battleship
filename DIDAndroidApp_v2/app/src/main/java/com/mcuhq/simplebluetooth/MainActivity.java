@@ -328,8 +328,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-
-
+            
             mJ10.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){

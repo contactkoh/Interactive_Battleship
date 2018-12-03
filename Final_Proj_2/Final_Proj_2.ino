@@ -77,16 +77,23 @@ byte y_pos[] = {
 byte hits[] = {
     1,   1,   1,   1,   1,   0,   0,   0,   0,   0,
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
-    0,   0,   0,   0,   0,   0,   0,   0,   0,   1,
-    0,   0,   0,   0,   0,   1,   0,   0,   0,   1,
-    0,   1,   1,   0,   0,   1,   0,   0,   0,   1,
-    0,   0,   0,   0,   0,   1,   0,   0,   0,   1,
+    0,   0,   0,   0,   0,   0,   0,   0,   0,   2,
+    0,   0,   0,   0,   0,   4,   0,   0,   0,   2,
+    0,   5,   5,   0,   0,   4,   0,   0,   0,   2,
+    0,   0,   0,   0,   0,   4,   0,   0,   0,   2,
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
     0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
-    1,   1,   1,   1,   0,   0,   0,   0,   0,   0  
+    3,   3,   3,   3,   0,   0,   0,   0,   0,   0  
 };
 
+byte shipstatus[] = {
+  0, 0, 0, 0, 0
+};
+
+byte shiplength[] = {
+  5, 4, 4, 3, 2
+};
 
 void setup() {
 
@@ -176,7 +183,10 @@ void loop() {
          * LED Board  Hit or Miss check  then light up
          */
         if(hits[i]){
-            digitalWrite(13,HIGH);
+            shipstatus[hits[i]]++;
+            if(shipstatus[hits[i]] == shiplength[hits[i]]) {
+                rainbow(20,hits[i]);
+              }
             strip.setPixelColor(i, strip.Color(255, 0, 0));
             strip.show();
           } else {
@@ -238,4 +248,32 @@ void sendCommand(int8_t command, int16_t dat)
   {
     mySerial.write(Send_buf[i]) ;
   }
+}
+
+
+void rainbow(uint8_t wait, byte ship) {
+  uint16_t i, j;
+
+  for(j=0; j<256; j++) {
+    for(i=0; i<strip.numPixels(); i++) {
+      if(hits[i] == ship) {
+      strip.setPixelColor(i, Wheel((i+j) & 255));
+      }
+    }
+    strip.show();
+    delay(wait);
+  }
+}
+
+uint32_t Wheel(byte WheelPos) {
+  WheelPos = 255 - WheelPos;
+  if(WheelPos < 85) {
+    return strip.Color(255 - WheelPos * 3, 0, WheelPos * 3);
+  }
+  if(WheelPos < 170) {
+    WheelPos -= 85;
+    return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
+  }
+  WheelPos -= 170;
+  return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }

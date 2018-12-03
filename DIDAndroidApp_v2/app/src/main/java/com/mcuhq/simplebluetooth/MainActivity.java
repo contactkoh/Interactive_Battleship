@@ -120,53 +120,21 @@ public class MainActivity extends AppCompatActivity {
         // mReadBuffer = (TextView) findViewById(R.id.readBuffer);
         mScanBtn = (Button)findViewById(R.id.scan);
         mOffBtn = (Button)findViewById(R.id.off);
-        mDiscoverBtn = (Button)findViewById(R.id.discover);
+        //mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.PairedBtn);
 
         //populate inputs
-        mA1 = (Button)findViewById(R.id.buttonA1);
-        mA2 = (Button)findViewById(R.id.buttonA2);
-        mA3 = (Button)findViewById(R.id.buttonA3);
-        mA4 = (Button)findViewById(R.id.buttonA4);
-        mA5 = (Button)findViewById(R.id.buttonA5);
-        mA6 = (Button)findViewById(R.id.buttonA6);
-        mA7 = (Button)findViewById(R.id.buttonA7);
-        mA8 = (Button)findViewById(R.id.buttonA8);
-        mA9 = (Button)findViewById(R.id.buttonA9);
-        mA10 = (Button)findViewById(R.id.buttonA10);
+        mA1 = (Button)findViewById(R.id.button1);
+        mA2 = (Button)findViewById(R.id.button2);
+        mA3 = (Button)findViewById(R.id.button3);
+        mA4 = (Button)findViewById(R.id.button4);
+        mA5 = (Button)findViewById(R.id.button5);
+        mA6 = (Button)findViewById(R.id.button6);
+        mA7 = (Button)findViewById(R.id.button7);
+        mA8 = (Button)findViewById(R.id.button8);
+        mA9 = (Button)findViewById(R.id.button9);
+        mA10 = (Button)findViewById(R.id.button10);
 
-        mB1 = (Button)findViewById(R.id.buttonB1);
-        mB2 = (Button)findViewById(R.id.buttonB2);
-        mB3 = (Button)findViewById(R.id.buttonB3);
-        mB4 = (Button)findViewById(R.id.buttonB4);
-        mB5 = (Button)findViewById(R.id.buttonB5);
-        mB6 = (Button)findViewById(R.id.buttonB6);
-        mB7 = (Button)findViewById(R.id.buttonB7);
-        mB8 = (Button)findViewById(R.id.buttonB8);
-        mB9 = (Button)findViewById(R.id.buttonB9);
-        mB10 = (Button)findViewById(R.id.buttonB10);
-
-        mC1 = (Button)findViewById(R.id.buttonC1);
-        mC2 = (Button)findViewById(R.id.buttonC2);
-        mC3 = (Button)findViewById(R.id.buttonC3);
-        mC4 = (Button)findViewById(R.id.buttonC4);
-        mC5 = (Button)findViewById(R.id.buttonC5);
-        mC6 = (Button)findViewById(R.id.buttonC6);
-        mC7 = (Button)findViewById(R.id.buttonC7);
-        mC8 = (Button)findViewById(R.id.buttonC8);
-        mC9 = (Button)findViewById(R.id.buttonC9);
-        mC10 = (Button)findViewById(R.id.buttonC10);
-
-        mJ1 = (Button)findViewById(R.id.buttonJ1);
-        mJ2 = (Button)findViewById(R.id.buttonJ2);
-        mJ3 = (Button)findViewById(R.id.buttonJ3);
-        mJ4 = (Button)findViewById(R.id.buttonJ4);
-        mJ5 = (Button)findViewById(R.id.buttonJ5);
-        mJ6 = (Button)findViewById(R.id.buttonJ6);
-        mJ7 = (Button)findViewById(R.id.buttonJ7);
-        mJ8 = (Button)findViewById(R.id.buttonJ8);
-        mJ9 = (Button)findViewById(R.id.buttonJ9);
-        mJ10 = (Button)findViewById(R.id.buttonJ10);
 
 
         //mJ10 = (CheckBox)findViewById(R.id.checkboxJ10);
@@ -294,50 +262,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            mJ1.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c90\n");
-
-                }
-            });
-
-            mJ2.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c91\n");
-                }
-            });
-
-            mJ3.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c92\n");
-                }
-            });
-
-            mJ4.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c93\n");
-                }
-            });
-
-
-            
-            mJ10.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c99\n");
-                }
-            });
-
-
             mScanBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -359,12 +283,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            mDiscoverBtn.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    discover(v);
-                }
-            });
         }
     }
 

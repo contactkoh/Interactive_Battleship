@@ -221,6 +221,70 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            mA2.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c1\n");
+                }
+            });
+
+            mA3.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c2\n");
+                }
+            });
+
+            mA4.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c3\n");
+                }
+            });
+
+            mA5.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c4\n");
+                }
+            });
+
+            mA6.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c5\n");
+                }
+            });
+
+            mA7.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c6\n");
+                }
+            });
+
+            mA8.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c7\n");
+                }
+            });
+
+            mA9.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c8\n");
+                }
+            });
+
             mA10.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
@@ -239,20 +303,38 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            mJ2.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c91\n");
+                }
+            });
+
+            mJ3.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c92\n");
+                }
+            });
+
+            mJ4.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c93\n");
+                }
+            });
+
+
+
+
             mJ10.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
                     if(mConnectedThread != null) //First check to make sure thread created
                         mConnectedThread.write("c99\n");
-
-                }
-            });
-
-            mA5.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c4\n");
                 }
             });
 

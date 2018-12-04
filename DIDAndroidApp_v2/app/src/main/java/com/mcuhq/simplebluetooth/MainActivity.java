@@ -46,56 +46,30 @@ public class MainActivity extends AppCompatActivity {
     private Set<BluetoothDevice> mPairedDevices;
     private ArrayAdapter<String> mBTArrayAdapter;
     private ListView mDevicesListView;
+    public int myGuess = 0;
 
-    private Button mA1;
-    private Button mA2;
-    private Button mA3;
-    private Button mA4;
-    private Button mA5;
-    private Button mA6;
-    private Button mA7;
-    private Button mA8;
-    private Button mA9;
-    private Button mA10;
+    private Button m1;
+    private Button m2;
+    private Button m3;
+    private Button m4;
+    private Button m5;
+    private Button m6;
+    private Button m7;
+    private Button m8;
+    private Button m9;
+    private Button m10;
 
-    private Button mB1;
-    private Button mB2;
-    private Button mB3;
-    private Button mB4;
-    private Button mB5;
-    private Button mB6;
-    private Button mB7;
-    private Button mB8;
-    private Button mB9;
-    private Button mB10;
-
-    private Button mC1;
-    private Button mC2;
-    private Button mC3;
-    private Button mC4;
-    private Button mC5;
-    private Button mC6;
-    private Button mC7;
-    private Button mC8;
-    private Button mC9;
-    private Button mC10;
-
-    private Button mJ1;
-    private Button mJ2;
-    private Button mJ3;
-    private Button mJ4;
-    private Button mJ5;
-    private Button mJ6;
-    private Button mJ7;
-    private Button mJ8;
-    private Button mJ9;
-    private Button mJ10;
-
-
-
-    //private CheckBox mJ10;
-    //private CheckBox mA5;
-
+    private Button mA;
+    private Button mB;
+    private Button mC;
+    private Button mD;
+    private Button mE;
+    private Button mF;
+    private Button mG;
+    private Button mH;
+    private Button mI;
+    private Button mJ;
+    private Button mFire;
 
     private final String TAG = MainActivity.class.getSimpleName();
     private Handler mHandler; // Our main handler that will receive callback notifications
@@ -124,16 +98,27 @@ public class MainActivity extends AppCompatActivity {
         mListPairedDevicesBtn = (Button)findViewById(R.id.PairedBtn);
 
         //populate inputs
-        mA1 = (Button)findViewById(R.id.button1);
-        mA2 = (Button)findViewById(R.id.button2);
-        mA3 = (Button)findViewById(R.id.button3);
-        mA4 = (Button)findViewById(R.id.button4);
-        mA5 = (Button)findViewById(R.id.button5);
-        mA6 = (Button)findViewById(R.id.button6);
-        mA7 = (Button)findViewById(R.id.button7);
-        mA8 = (Button)findViewById(R.id.button8);
-        mA9 = (Button)findViewById(R.id.button9);
-        mA10 = (Button)findViewById(R.id.button10);
+        m1 = (Button)findViewById(R.id.button1);
+        m2 = (Button)findViewById(R.id.button2);
+        m3 = (Button)findViewById(R.id.button3);
+        m4 = (Button)findViewById(R.id.button4);
+        m5 = (Button)findViewById(R.id.button5);
+        m6 = (Button)findViewById(R.id.button6);
+        m7 = (Button)findViewById(R.id.button7);
+        m8 = (Button)findViewById(R.id.button8);
+        m9 = (Button)findViewById(R.id.button9);
+        m10 = (Button)findViewById(R.id.button10);
+        mA = (Button)findViewById(R.id.buttonA);
+        mB = (Button)findViewById(R.id.buttonB);
+        mC = (Button)findViewById(R.id.buttonC);
+        mD = (Button)findViewById(R.id.buttonD);
+        mE = (Button)findViewById(R.id.buttonE);
+        mF = (Button)findViewById(R.id.buttonF);
+        mG = (Button)findViewById(R.id.buttonG);
+        mH = (Button)findViewById(R.id.buttonH);
+        mI = (Button)findViewById(R.id.buttonI);
+        mJ = (Button)findViewById(R.id.buttonJ);
+        mFire = (Button)findViewById(R.id.buttonSend);
 
 
 
@@ -181,84 +166,153 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 
-            mA1.setOnClickListener(new View.OnClickListener(){
+            mFire.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
+                    String fullGuess = "c" + String.valueOf(myGuess) + "\n";
                     if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c0\n");
+                        mConnectedThread.write(fullGuess);
+                    myGuess = 0;
                 }
             });
 
-            mA2.setOnClickListener(new View.OnClickListener(){
+            m1.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c1\n");
+                    myGuess+=0;
                 }
             });
 
-            mA3.setOnClickListener(new View.OnClickListener(){
+            m2.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c2\n");
+                    myGuess+=1;
                 }
             });
 
-            mA4.setOnClickListener(new View.OnClickListener(){
+            m3.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c3\n");
+                    myGuess+=2;
                 }
             });
 
-            mA5.setOnClickListener(new View.OnClickListener(){
+            m4.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c4\n");
+                    myGuess+=3;
                 }
             });
 
-            mA6.setOnClickListener(new View.OnClickListener(){
+            m5.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c5\n");
+                    myGuess+=4;
                 }
             });
 
-            mA7.setOnClickListener(new View.OnClickListener(){
+            m6.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c6\n");
+                    myGuess+=5;
                 }
             });
 
-            mA8.setOnClickListener(new View.OnClickListener(){
+            m7.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c7\n");
+                    myGuess+=6;
                 }
             });
 
-            mA9.setOnClickListener(new View.OnClickListener(){
+            m8.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c8\n");
+                    myGuess+=7;
                 }
             });
 
-            mA10.setOnClickListener(new View.OnClickListener(){
+            m9.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write("c9\n");
+                    myGuess+=8;
+                }
+            });
 
+            m10.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=9;
+                }
+            });
+
+            mA.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=0;
+                }
+            });
+
+            mB.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=10;
+                }
+            });
+
+            mC.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=20;
+                }
+            });
+
+            mD.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=30;
+                }
+            });
+
+            mE.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=40;
+                }
+            });
+
+            mF.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=50;
+                }
+            });
+
+            mG.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=60;
+                }
+            });
+
+            mH.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=70;
+                }
+            });
+
+            mI.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=80;
+                }
+            });
+
+            mJ.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    myGuess+=90;
                 }
             });
 

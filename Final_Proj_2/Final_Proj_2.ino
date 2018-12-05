@@ -88,11 +88,11 @@ byte hits[] = {
 };
 
 byte shipstatus[] = {
-  0, 0, 0, 0, 0
+  0, 0, 0, 0, 0, 0
 };
 
 byte shiplength[] = {
-  5, 4, 4, 3, 2
+  0, 5, 4, 4, 3, 2
 };
 
 void setup() {
@@ -123,6 +123,11 @@ void setup() {
   panServo.attach(9);
   tiltServo.write(75);  //initial position  center  . orig 90
   panServo.write(18);
+  shipstatus[1] = 0;  // set all ship hit-counts to 0
+  shipstatus[2] = 0;
+  shipstatus[3] = 0;
+  shipstatus[4] = 0;
+  shipstatus[5] = 0;
   for(uint16_t i=0; i<strip.numPixels(); i++) {
     strip.setPixelColor(i, strip.Color(0, 0, 255));
   }
@@ -184,11 +189,11 @@ void loop() {
          */
         if(hits[i]){
             shipstatus[hits[i]]++;
-            if(shipstatus[hits[i]] == shiplength[hits[i]]) {
-                rainbow(20,hits[i]);
-              }
-            strip.setPixelColor(i, strip.Color(255, 0, 0));
+            strip.setPixelColor(i, strip.Color(255, 70, 0));
             strip.show();
+            if(shipstatus[hits[i]] == shiplength[hits[i]]) {
+                colorWipe(strip.Color(255, 0, 0), 250, hits[i]); // Red
+              }
           } else {
             strip.setPixelColor(i, strip.Color(255, 255, 255));
             strip.show();
@@ -250,30 +255,13 @@ void sendCommand(int8_t command, int16_t dat)
   }
 }
 
-
-void rainbow(uint8_t wait, byte ship) {
-  uint16_t i, j;
-
-  for(j=0; j<256; j++) {
-    for(i=0; i<strip.numPixels(); i++) {
-      if(hits[i] == ship) {
-      strip.setPixelColor(i, Wheel((i+j) & 255));
-      }
-    }
+// Fill the dots one after the other with a color
+void colorWipe(uint32_t c, uint8_t wait, int ship) {
+  for(uint16_t i=0; i<strip.numPixels(); i++) {
+    if(hits[i] == ship) {
+    strip.setPixelColor(i, c);
     strip.show();
     delay(wait);
+    }
   }
-}
-
-uint32_t Wheel(byte WheelPos) {
-  WheelPos = 255 - WheelPos;
-  if(WheelPos < 85) {
-    return strip.Color(255 - WheelPos * 3, 0, WheelPos * 3);
-  }
-  if(WheelPos < 170) {
-    WheelPos -= 85;
-    return strip.Color(0, WheelPos * 3, 255 - WheelPos * 3);
-  }
-  WheelPos -= 170;
-  return strip.Color(WheelPos * 3, 255 - WheelPos * 3, 0);
 }

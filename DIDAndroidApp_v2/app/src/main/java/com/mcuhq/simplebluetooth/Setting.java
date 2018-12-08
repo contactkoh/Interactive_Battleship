@@ -33,7 +33,7 @@ import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class Setting extends AppCompatActivity {
 
     // GUI Components
     private TextView mBluetoothStatus;
@@ -46,30 +46,22 @@ public class MainActivity extends AppCompatActivity {
     private Set<BluetoothDevice> mPairedDevices;
     private ArrayAdapter<String> mBTArrayAdapter;
     private ListView mDevicesListView;
-    public int myGuess = 0;
 
-    private Button m1;
-    private Button m2;
-    private Button m3;
-    private Button m4;
-    private Button m5;
-    private Button m6;
-    private Button m7;
-    private Button m8;
-    private Button m9;
-    private Button m10;
+    private Button mA1;
+    private Button mA2;
+    private Button mA3;
+    private Button mA4;
+    private Button mA5;
+    private Button mA6;
+    private Button mA7;
+    private Button mA8;
+    private Button mA9;
+    private Button mA10;
 
-    private Button mA;
-    private Button mB;
-    private Button mC;
-    private Button mD;
-    private Button mE;
-    private Button mF;
-    private Button mG;
-    private Button mH;
-    private Button mI;
-    private Button mJ;
-    private Button mFire;
+
+    //private CheckBox mJ10;
+    //private CheckBox mA5;
+
 
     private final String TAG = MainActivity.class.getSimpleName();
     private Handler mHandler; // Our main handler that will receive callback notifications
@@ -77,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
     private BluetoothSocket mBTSocket = null; // bi-directional client-to-client data path
 
     private static final UUID BTMODULEUUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // "random" unique identifier
-
 
     // #defines for identifying shared types between calling functions
     private final static int REQUEST_ENABLE_BT = 1; // used to identify adding bluetooth names
@@ -88,39 +79,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_setting);
 
         mBluetoothStatus = (TextView)findViewById(R.id.bluetoothStatus);
         // mReadBuffer = (TextView) findViewById(R.id.readBuffer);
         mScanBtn = (Button)findViewById(R.id.scan);
         mOffBtn = (Button)findViewById(R.id.off);
-        //mDiscoverBtn = (Button)findViewById(R.id.discover);
+        mDiscoverBtn = (Button)findViewById(R.id.discover);
         mListPairedDevicesBtn = (Button)findViewById(R.id.PairedBtn);
 
         //populate inputs
-        m1 = (Button)findViewById(R.id.button1);
-        m2 = (Button)findViewById(R.id.button2);
-        m3 = (Button)findViewById(R.id.button3);
-        m4 = (Button)findViewById(R.id.button4);
-        m5 = (Button)findViewById(R.id.button5);
-        m6 = (Button)findViewById(R.id.button6);
-        m7 = (Button)findViewById(R.id.button7);
-        m8 = (Button)findViewById(R.id.button8);
-        m9 = (Button)findViewById(R.id.button9);
-        m10 = (Button)findViewById(R.id.button10);
-        mA = (Button)findViewById(R.id.buttonA);
-        mB = (Button)findViewById(R.id.buttonB);
-        mC = (Button)findViewById(R.id.buttonC);
-        mD = (Button)findViewById(R.id.buttonD);
-        mE = (Button)findViewById(R.id.buttonE);
-        mF = (Button)findViewById(R.id.buttonF);
-        mG = (Button)findViewById(R.id.buttonG);
-        mH = (Button)findViewById(R.id.buttonH);
-        mI = (Button)findViewById(R.id.buttonI);
-        mJ = (Button)findViewById(R.id.buttonJ);
-        mFire = (Button)findViewById(R.id.buttonSend);
-
-
+        mA1 = (Button)findViewById(R.id.buttonA1);
+        mA2 = (Button)findViewById(R.id.buttonA2);
+        mA3 = (Button)findViewById(R.id.buttonA3);
+        mA4 = (Button)findViewById(R.id.buttonA4);
+        mA5 = (Button)findViewById(R.id.buttonA5);
+        mA6 = (Button)findViewById(R.id.buttonA6);
+        mA7 = (Button)findViewById(R.id.buttonA7);
+        mA8 = (Button)findViewById(R.id.buttonA8);
+        mA9 = (Button)findViewById(R.id.buttonA9);
+        mA10 = (Button)findViewById(R.id.buttonA10);
 
         //mJ10 = (CheckBox)findViewById(R.id.checkboxJ10);
         //mA5 = (CheckBox)findViewById(R.id.checkboxA5);
@@ -166,155 +144,31 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
 
-            mFire.setOnClickListener(new View.OnClickListener(){
+            mA1.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    String fullGuess = "c" + String.valueOf(myGuess) + "\n";
                     if(mConnectedThread != null) //First check to make sure thread created
-                        mConnectedThread.write(fullGuess);
-                    myGuess = 0;
+                        mConnectedThread.write("c0\n");
                 }
             });
 
-            m1.setOnClickListener(new View.OnClickListener(){
+            mA10.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    myGuess+=0;
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c9\n");
+
                 }
             });
 
-            m2.setOnClickListener(new View.OnClickListener(){
+            mA5.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    myGuess+=1;
+                    if(mConnectedThread != null) //First check to make sure thread created
+                        mConnectedThread.write("c4\n");
                 }
             });
 
-            m3.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=2;
-                }
-            });
-
-            m4.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=3;
-                }
-            });
-
-            m5.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=4;
-                }
-            });
-
-            m6.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=5;
-                }
-            });
-
-            m7.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=6;
-                }
-            });
-
-            m8.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=7;
-                }
-            });
-
-            m9.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=8;
-                }
-            });
-
-            m10.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=9;
-                }
-            });
-
-            mA.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=0;
-                }
-            });
-
-            mB.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=10;
-                }
-            });
-
-            mC.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=20;
-                }
-            });
-
-            mD.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=30;
-                }
-            });
-
-            mE.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=40;
-                }
-            });
-
-            mF.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=50;
-                }
-            });
-
-            mG.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=60;
-                }
-            });
-
-            mH.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=70;
-                }
-            });
-
-            mI.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=80;
-                }
-            });
-
-            mJ.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    myGuess+=90;
-                }
-            });
 
             mScanBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -337,6 +191,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+            mDiscoverBtn.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    discover(v);
+                }
+            });
         }
     }
 
@@ -548,5 +408,6 @@ public class MainActivity extends AppCompatActivity {
     /* Back button to go back. Works only if the home MainActivity has no finish()  */
     private void OnBackPressed(){
     }
+
 
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,13 +25,14 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="550dp">
+            android:layout_height="wrap_content"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbars="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -40,6 +42,7 @@
 
                     <Button
                         android:id="@+id/buttonA"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -48,6 +51,7 @@
 
                     <Button
                         android:id="@+id/buttonB"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -56,6 +60,7 @@
 
                     <Button
                         android:id="@+id/buttonC"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -64,6 +69,7 @@
 
                     <Button
                         android:id="@+id/buttonD"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -72,6 +78,7 @@
 
                     <Button
                         android:id="@+id/buttonE"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -80,6 +87,7 @@
 
                     <Button
                         android:id="@+id/buttonF"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -88,6 +96,7 @@
 
                     <Button
                         android:id="@+id/buttonG"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -96,6 +105,7 @@
 
                     <Button
                         android:id="@+id/buttonH"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -104,6 +114,7 @@
 
                     <Button
                         android:id="@+id/buttonI"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -112,6 +123,7 @@
 
                     <Button
                         android:id="@+id/buttonJ"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -126,6 +138,7 @@
 
                     <Button
                         android:id="@+id/button1"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -134,6 +147,7 @@
 
                     <Button
                         android:id="@+id/button2"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -142,6 +156,7 @@
 
                     <Button
                         android:id="@+id/button3"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -150,6 +165,7 @@
 
                     <Button
                         android:id="@+id/button4"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -158,6 +174,7 @@
 
                     <Button
                         android:id="@+id/button5"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -166,6 +183,7 @@
 
                     <Button
                         android:id="@+id/button6"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -174,6 +192,7 @@
 
                     <Button
                         android:id="@+id/button7"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -182,6 +201,7 @@
 
                     <Button
                         android:id="@+id/button8"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -190,6 +210,7 @@
 
                     <Button
                         android:id="@+id/button9"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -198,6 +219,7 @@
 
                     <Button
                         android:id="@+id/button10"
+                        style="@android:style/Widget.Button.Inset"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -216,12 +238,15 @@
 
         <Button
             android:id="@+id/buttonSend"
+            style="@android:style/Widget.Button.Inset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:alpha="0.9"
             android:background="@android:color/holo_red_light"
-            android:text="FIRE" />
+            android:text="FIRE"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
     </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -235,6 +260,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Status:"
+                android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
 
             <TextView
@@ -247,7 +273,8 @@
                 android:layout_weight="0.9"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="&lt;Bluetooth Status>" />
+                android:text="&lt;Bluetooth Status>"
+                android:textColor="@color/colorPrimary" />
         </LinearLayout>
 
         <LinearLayout
@@ -281,17 +308,24 @@
                 android:layout_below="@+id/scan"
                 android:alpha="0.2"
                 android:text="PAIRED" />
+
+            <ImageButton
+                android:id="@+id/menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_rotate" />
         </LinearLayout>
 
         <ListView
             android:id="@+id/devicesListView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/PairedBtn"
             android:layout_alignEnd="@+id/off"
             android:layout_alignRight="@+id/off"
-            android:layout_below="@+id/PairedBtn"
             android:choiceMode="singleChoice" />
     </LinearLayout>
 
 
-</RelativeLayout>
+</ScrollView>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Interactive Battleship</string>
+    <string name="pressbackagain">Press back again to exit</string>
 </resources>

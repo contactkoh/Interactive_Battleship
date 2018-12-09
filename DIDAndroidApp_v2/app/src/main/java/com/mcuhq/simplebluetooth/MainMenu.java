@@ -25,25 +25,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        Button button2 = (Button) this.findViewById(R.id.control);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class); // need to change to ManualControl.class
-                startActivity(i);
-            }
-        });
-
-        Button button3 = (Button) this.findViewById(R.id.guard);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class);  // need to change to GuardMode.class
-                startActivity(i);
-            }
-        });
-
-        Button button4 = (Button) this.findViewById(R.id.setting);
+        Button button2 = (Button) this.findViewById(R.id.setting);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
